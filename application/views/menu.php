@@ -8,10 +8,32 @@
         height: 400px;
         background-color: grey;
       }
-body { background-color:#DAE4F5; }
+.card2{
+    background:rgba(159,159,159, .6);
+  }
+.card4{
+    background:rgba(229,229,229, .6);
+  }
+.modificar{
+    background:rgba(255,255,255, .8);
+  }
+  .sidenav.sidenav-fixed {
+     background:rgba(0,59,59, .6);
+  }
+  .barra{
+    background:rgba(220,229,229, .6);
+  }
+body { background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQRTpxiM8IyBCcaqh5iCy0eK2myw-2aW1rKRpRVhlXW8yEhBFTG);
+  background-repeat: no-repeat;
+ background-position: center;
+  background-size: cover;
+  position: relative;
+}
+  }
 .login{
     background:rgba(0, 0, 0, .6);
   }
+
   .login input{
     font-size: 20px !important;
     color: #ccc;
@@ -36,7 +58,7 @@ body { background-color:#DAE4F5; }
 .map{
       display: flow-root;
 }
-.material-icons.green600{ color:blue; }
+.material-icons.green600{ color:green; }
 header, main, footer ,body{
       padding-left: 200px;
     }
@@ -61,44 +83,30 @@ header, main, footer ,body{
 <body>
 <div class="hero-image">
     <div>
-    	   <ul id="menu-side" class="sidenav sidenav-fixed blue darken-4">
+    	   <ul id="menu-side" class="sidenav sidenav-fixed barra">
            <li>
             <div class="user-view">
-                <div class="background indigo darken-4">
+                <div class="">
                 <a href="<?php echo base_url()?>">
                 <!--<img src="https://img.freepik.com/vector-gratis/arbol-deja-frontera-fondo-defocused-abstracto-verde_33099-1423.jpg?size=626&ext=jpg"></a>
               -->
               </div>
-               <a href="<?php echo base_url()?>"><img class="circle" src="https://upload.wikimedia.org/wikipedia/commons/6/62/Partido_Autonomista_Nacional_2019.png"></a>
-               <a href="#name"><span class="black-text name">Bienvenido <?php $use=$user[0];
-               echo $use->nombre." ".$use->apellidos;?></span></a>
+               <a href="<?php echo base_url()?>"><img class="circle" src="https://pbs.twimg.com/profile_images/678760221607522304/BtT1ZMXQ_400x400.jpg"></a>
+               <a href="#name"><span class="white-text name">Bienvenido <?php $use=$user[0];
+               echo $use->nombre;?></span></a>
            </li>
            
-           <li><a class='dropdown-trigger' href='#' data-target='dropdown1'><i class="small material-icons white-text">add_shopping_cart</i>Generar Solicitud</a></li>
-           <!-- Dropdown Structure -->
-            <ul id='dropdown1' class='dropdown-content blue'>
-            <li><a href="#">Proovedores</a></li>
-            <li><a href='<?php echo base_url()."welcome/generarSolicitud";?>'>Viáticos</a></li>
-            <li><a href="#!">Estructura</a></li>
-            </ul>
-           <li><a href='<?php echo base_url()."welcome/verMisSolicitudes";?>'><i class="small material-icons white-text">remove_red_eye</i>Ver mis solicitudes</a></li>
+           <li><a class='dropdown-trigger white-text' href='#' data-target='dropdown1'><i class="small material-icons white-text">add_shopping_cart</i>Venta</a></li>
+           <li><a class='dropdown-trigger white-text' href='#' data-target='dropdown1'><i class="small material-icons white-text">assessment</i>Corte</a></li>
            <?php 
            if($_SESSION['rol']==1){
-            //Menú para administrar solicitudes
-            echo '<li><a class="dropdown-trigger" href="#" data-target="dropdown2"><i class="small material-icons white-text">account_balance_wallet</i>Solicitudes</a></li>';
-            echo '<ul id="dropdown2" class="dropdown-content blue">';
-            echo '<li><a href="'.base_url().'welcome/verSolicitudes">Pendientes de aprobar</a></li>';
-            echo '<li><a href="'.base_url().'welcome/pagarSolicitudes">Pendientes de pagar</a></li>';
-            echo '<li><a href="'.base_url().'welcome/verificarComprobacion">Verificar comprobación</a></li>';
-            echo "</ul>";
-            //--------------------------
-            echo '<li><a href="'.base_url().'welcome/verProveedores"><i class="small material-icons white-text">payment</i>Proveedores</a></li>';
-            echo '<li><a href="'.base_url().'welcome/verUsuarios"><i class="small material-icons white-text">account_box</i>Usuarios</a></li>';
-            echo '<li><a href="'.base_url().'welcome/estructuras"><i class="small material-icons white-text">account_balance</i>Estructuras</a></li>';            
+            echo '<li><a href="'.base_url().'welcome/Produtos" class="white-text"><i class="small material-icons white-text">add_to_photos</i>Productos</a></li>';
+            echo '<li><a href="'.base_url().'Pagos/verPagos" class="white-text"><i class="small material-icons white-text">payment</i>Forma de pago</a></li>';
+            echo '<li><a href="'.base_url().'Locales/verLocales" class="white-text"><i class="small material-icons white-text">account_balance</i>Locales</a></li>';
+            echo '<li><a href="'.base_url().'welcome/verUsuarios" class="white-text"><i class="small material-icons white-text">account_box</i>Usuarios</a></li>';         
             }
            ?>
-            <li><a href='<?php echo base_url()."welcome/exit";?>'><i class="small material-icons white-text">announcement</i>Salir</a></li>
+            <li><a href='<?php echo base_url()."welcome/exit";?>' class="btn red"><i class="small material-icons white-text">announcement</i><h4>Salir</h4></a></li>
         </ul>
     	<a href="#" class="sidenav-trigger" data-target="menu-side"><i class="medium material-icons green600">menu</i></a>
-
     </div>

@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <div class="container ">
     <div class="row center">
       <div class="col s12 center">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/PAN_logo_%28Mexico%29.svg/1200px-PAN_logo_%28Mexico%29.svg.png" width="60%" height="60%">  
+        
       </div>
     </div>
   </div>

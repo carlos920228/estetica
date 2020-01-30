@@ -27,7 +27,7 @@ class Estruc_model extends CI_Model{
 	function get_detalle($id){
 		$this->db->where('idestructuras',$id);
 		$result= $this->db->get('estructuras');
-		return $result->result();;
+		return $result->result();
 		
 	}
 	function update_estruc($id,$data){

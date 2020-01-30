@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <style type="text/css">
 	body{
-		background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/PAN_logo_%28Mexico%29.svg/1200px-PAN_logo_%28Mexico%29.svg.png);
+		background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQRTpxiM8IyBCcaqh5iCy0eK2myw-2aW1rKRpRVhlXW8yEhBFTG);
 		background-size: cover;
 		color: #fff;
 		
@@ -41,13 +41,13 @@
 	<div class="col s12 ">
 		<form method="post" action='<?php echo base_url()."welcome/entrar";?>'>
 		<div class="card">
-			<div class="card-action blue white-text">
-					<h3 class="center-align">SIFI</h3>
+			<div class="card-action white-text">
+					<h3 class="center-align">Hugo & Enrique</h3>
 			</div>
 			<div class="card-content">
 				<div class="form-field">
-					<label for="username">Correo</label>
-					<input type="email" name="username" id="username" class="validate" required>
+					<label for="username">Nombre</label>
+					<input type="text" name="username" id="username" class="validate" required>
 				</div><br>
 			</div>
 			<div class="card-content">
@@ -58,7 +58,7 @@
 			</div>
 			<div class="card-content">
 				<div class="form-field">
-				<button class="btn waves-effect waves-light btn-large blue" type="submit" name="action">Entrar
+				<button class="btn waves-effect waves-light btn-large" type="submit" name="action">Entrar
     				<i class=" material-icons right">touch_app</i>
   				</button>
 				</div><br>

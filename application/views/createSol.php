@@ -27,7 +27,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
             <option value="Comidas">Comidas</option>
             <option value="Otro">Otro</option>
             </select>
-            <label data-error="wrong" data-success="right" for="activity">Concepto</label>
+            <label data-error="wrong" data-success="right" for="concepto">Concepto</label>
             </div>
             <div class="input-field col s6">
             <input id="total" name="total" type="number" class="validate" step="any" placeholder="0.00" min="1" required><label for="total">Cantidad</label>

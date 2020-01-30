@@ -13,6 +13,7 @@ function __construct(){
 		$this->load->model('Prov_model');
 		$this->load->model('Estruc_model');
 		$this->load->model('Solicitud_model');
+		$this->load->model('Locales_model');
 		$this->resultado="";
 		
 	}
@@ -36,7 +37,7 @@ function __construct(){
 			$test['user']=$user;
 			$use=$user[0];
 			//Guardamos el rol en la sesion
-			$this->session->set_userdata('rol',$use->nivel);
+			$this->session->set_userdata('rol',$use->rol);
 			$this->load->view('menu',$test);
 			$this->load->view('principal');
 		}else{
@@ -107,6 +108,7 @@ public function verSolicitudes()
 		if(isset($_SESSION['username'])&&$_SESSION['rol']>=1){
 			$test['user']=$this->User_model->data($_SESSION['username']);
 			$test['data']=$this->User_model->get_user();
+			$test['locales']=$this->Locales_model->get_locales();
 			$this->load->view('menu',$test);
 			$this->load->view('crudUsuarios',$test);
 		}else{

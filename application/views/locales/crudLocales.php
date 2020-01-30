@@ -1,27 +1,24 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
-<title>Administración usuarios</title>
+<title>Administración de locales</title>
     <div class="container">
       <a class="btn-floating btn-large waves-effect waves-light red pulse btn modal-trigger" href="#modal1"><i class="material-icons">add</i></a>
 <!--Modal para agregar usuario-->
   <div id="modal1" class="modal modal">
     <div class="modal-content">
-      <h4 class="center">Agregar Usuario</h4>
+      <h4 class="center">Agregar Local</h4>
       <div class="row">
-        <form class="col s12" method="post" action='<?php echo base_url()."welcome/addUser";?>'>
+        <form class="col s12" method="post" action='<?php echo base_url()."Locales/add";?>'>
           <div class="row modal-form-row">
             <div class="input-field col s6">
               <input id="nombre" type="text" name="nombre" class="validate" required>
               <label for="nombre">Nombre</label>
             </div>
-           <div class="input-field col s6">
-            <select id="rol" name="rol" required>
-            <option value="0" selected>Normal</option>
-            <option value="1">Administrador</option>
-            </select>
-            <label data-error="wrong" data-success="right" for="rol">Tipo Usuario</label>
-            </div> 
+            <div class="input-field col s6">
+              <input id="direccion" type="text" name="direccion" class="validate" required>
+              <label for="nombre">Dirección</label>
+            </div>
           </div>      
           <div class="row">
             <div class="input-field col s6">
@@ -29,26 +26,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <label for="telefono">Teléfono</label>
             </div>
             <div class="input-field col s6">
-              <input id="usuario" name="usuario" type="text" class="validate" required>
-              <label for="usuario">Usuario</label>
+              <input id="activo" name="activo" type="text" value="1" hidden>
             </div>
           </div>   
-          <div class="row">
-            <div class="input-field col s6">
-             <select id="locales_id" name="locales_id" required>
-                      <?php
-                        foreach ($locales->result() as $user) {
-                        echo '<option value="'.$user->id.'">'.$user->direccion.'</option>';
-                      }?>
-            </select>
-            <label data-error="wrong" data-success="right" for="rol">Local</label> 
-            </div>
-            <div class="input-field col s6">
-              <input id="password" name="password" type="password" class="validate" required>
-              <label for="password">Contraseña</label>
-            </div>
-            <input type="text" name="activo" value="1" hidden>
-           </div>            
           <div class="row">
             <div class="input-field col s6">
             <button class="btn waves-effect light-blue darken-2" type="submit">Guardar
@@ -71,22 +51,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
    <thead>
   <tr>
     <th>Nombre</th>
-    <th>Teléfono</th>
-    <th>Usuario</th>
-    <th>Local</th>
+    <th>Dirección</th>
+    <th>Telefono</th>
     <th></th>
   </tr> 
 </thead>
 <tbody>
   <?php
-          foreach ($data->result() as $user) {
+          foreach ($locales->result() as $user) {
             echo "<tr>";
             echo "<td><b>$user->nombre</td>";
-            echo "<td><b>$user->telefono</td>";
-            echo "<td><b>$user->usuario</td>";
             echo "<td><b>$user->direccion</td>";
-            echo '<td><b><a href="'.base_url().'welcome/deleteUser?id='.$user->id.'"title="Borrar" <i class="material-icons red-text center">delete</i></td>';
-            echo '<td><b><a href="'.base_url().'usuario/update?id='.$user->id.'" title="Modificar"<i class="material-icons red-text center">update</i></td>';
+            echo "<td><b>$user->telefono</td>";
+            echo '<td><b><a href="'.base_url().'Locales/deleteUser?id='.$user->id.'"title="Borrar" <i class="material-icons red-text center">delete</i></td>';
+            echo '<td><b><a href="'.base_url().'Locales/update?id='.$user->id.'" title="Modificar"<i class="material-icons red-text center">update</i></td>';
             echo "</tr>";
           }?> 
 </tbody>
